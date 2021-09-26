@@ -6,7 +6,7 @@ function factorial(n) {
     return factorial;
   } else {
     for (n; n > 1; n--) {
-      factorial *= n
+      factorial *= n;
     };
     return factorial;
   };
