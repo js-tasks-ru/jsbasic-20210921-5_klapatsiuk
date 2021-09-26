@@ -5,9 +5,12 @@ function factorial(n) {
   } else if (n == 0) {
     return factorial;
   } else {
-    for (n; n > 1; n--) {
+    do {
       factorial *= n;
-    };
+      n--;
+    }
+    while (n > 1);
     return factorial;
+    // for (n; n > 1; n--) {factorial *= n};
   };
 }
