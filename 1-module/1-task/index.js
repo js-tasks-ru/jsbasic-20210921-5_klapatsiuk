@@ -1,7 +1,7 @@
 function factorial(n) {
   let factorial = 1;
   if (n < 0) {
-    return 'Факториал неопределён';
+    return 'Факториал не определён';
   } else if (n == 0) {
     return factorial;
   } else {
