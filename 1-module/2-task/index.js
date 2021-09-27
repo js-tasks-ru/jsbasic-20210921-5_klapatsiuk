@@ -10,7 +10,12 @@ function print(text) {
  * чтобы функция sayHello работала корректно
  */
 function isValid(name) {
-  // ваш код...
+  // let name = name;
+  if (name == null || name == '') {
+    return false;
+  } else {
+    return /^\S{4,}$/.test(name);
+  }
 }
 
 function sayHello() {

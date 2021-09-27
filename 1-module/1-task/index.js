@@ -1,3 +1,15 @@
 function factorial(n) {
-  // ваш код...
+  let factorial = 1;
+  if (n < 0) {
+    return 'Факториал не определён';
+  } else if (n == 0) {
+    return factorial;
+  } else {
+    do {
+      factorial *= n;
+      n--;
+    }
+    while (n > 1);
+    return factorial;
+  }
 }
