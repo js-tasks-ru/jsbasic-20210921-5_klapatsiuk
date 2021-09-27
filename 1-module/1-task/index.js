@@ -11,6 +11,5 @@ function factorial(n) {
     }
     while (n > 1);
     return factorial;
-    // for (n; n > 1; n--) {factorial *= n};
   };
 }
