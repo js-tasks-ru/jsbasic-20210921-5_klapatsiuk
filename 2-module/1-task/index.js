@@ -9,11 +9,16 @@ function sumSalary(salaries) {
   return sum;
 }
 
-// let salariesNumbers = Object.values(salaries).map(function(num) {
-//   if (num === Number(num) && ![NaN, Infinity, -Infinity].includes(num)) {
-//     num;
+// function sumSalary(salaries) {
+//   let sumOfSalaries = 0;
+
+//   for (let key in salaries) {
+//     let isSalary = typeof salaries[key] === 'number';
+
+//     if (isSalary) {
+//       sumOfSalaries += salaries[key];
+//     }
 //   }
-// }
-// )
-// let sum = salariesNumbers.reduce(function(a, b) { return a + b; }, 0);
+
+//   return sumOfSalaries;
 // }
