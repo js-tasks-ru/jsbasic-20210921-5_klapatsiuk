@@ -5,7 +5,7 @@ function initCarousel() {
   const carouselArrowLeft = document.getElementsByClassName('carousel__arrow_left')[0];
   const carouselArrowRight = document.getElementsByClassName('carousel__arrow_right')[0];
 
-  toggleVisCarouselArrows();
+  toggleVisibilityCarouselArrows();
 
   document.addEventListener('click', (event) => {
     let target = event.target;
@@ -24,10 +24,10 @@ function initCarousel() {
     
     carouselInner.style.transform = `translateX(${carouselCurrentPosition}px)`;
     
-    toggleVisCarouselArrows();
+    toggleVisibilityCarouselArrows();
   });
 
-  function toggleVisCarouselArrows() {
+  function toggleVisibilityCarouselArrows() {
     if (carouselCurrentPosition === 0) {
       carouselArrowLeft.style.display = 'none';
     } else if (carouselCurrentPosition === -3 * carouselInnerWidth) {
