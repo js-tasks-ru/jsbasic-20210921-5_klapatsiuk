@@ -1,24 +1,23 @@
 function initCarousel() {
-  const carouselInner = document.getElementsByClassName('carousel__inner')[0];
+  const carousel = document.querySelector('.carousel');
+  const carouselInner = document.querySelector('.carousel__inner');
   const carouselInnerWidth = carouselInner.offsetWidth;
   let carouselCurrentPosition = 0;
-  const carouselArrowLeft = document.getElementsByClassName('carousel__arrow_left')[0];
-  const carouselArrowRight = document.getElementsByClassName('carousel__arrow_right')[0];
+  const carouselArrowLeft = document.querySelector('.carousel__arrow_left');
+  const carouselArrowRight = document.querySelector('.carousel__arrow_right');
 
   toggleVisibilityCarouselArrows();
 
-  document.addEventListener('click', (event) => {
-    let target = event.target;
-    if (!target == (carouselArrowLeft || carouselArrowRight)) return;
+  carousel.addEventListener('click', (event) => {
+    const targetArrowLeft = event.target.closest('.carousel__arrow_left');
+    const targetArrowRight = event.target.closest('.carousel__arrow_right');
 
-    // Почему-то не срабатывает когда кликаешь на сами иконки-картинки...
-    // Даже когда условие меняю на:
-    // if (!target.classList.contains('carousel__arrow')) return;
-    // всё равно работает только когда кликаешь на div'ы вокруг картинок
-
-    if (target == carouselArrowLeft) {
+    if (!targetArrowRight == carouselArrowRight) return;
+    if (!targetArrowLeft == carouselArrowLeft) return;
+    
+    if (targetArrowLeft == carouselArrowLeft) {
       carouselCurrentPosition += carouselInnerWidth;
-    } else if (target == carouselArrowRight) {
+    } else if (targetArrowRight == carouselArrowRight) {
       carouselCurrentPosition -= carouselInnerWidth;
     }
     
