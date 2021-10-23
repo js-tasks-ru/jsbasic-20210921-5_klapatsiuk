@@ -3,12 +3,11 @@ import createElement from '../../assets/lib/create-element.js';
 export default class ProductCard {
   constructor(product) {
     this.product = product;
-    const card = this.renderCardElem();
-    this.addEventProductAdd(card);
-    this.elem = card;
+    this.elem = this.render();
+    this.productAddEventHandler();
   }
 
-  renderCardElem() {
+  render() {
     return createElement(`
     <div id="holder" class="container_half">
     <div class="card">
@@ -27,14 +26,15 @@ export default class ProductCard {
     `);
   }
 
-  addEventProductAdd(card) {
+  productAddEventHandler() {
     let productAddEvent = new CustomEvent("product-add", {
       detail: this.product.id,
       bubbles: true
     });
 
-    card.getElementsByClassName('card__button')[0].addEventListener(
-      'click', function() {card.dispatchEvent(productAddEvent);}
-    ); 
+    this.elem.getElementsByClassName('card__button')[0]
+    .addEventListener('click', function() {
+      this.dispatchEvent(productAddEvent);
+    }); 
   }
 }
