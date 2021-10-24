@@ -15,7 +15,6 @@ export default class Carousel {
       this.inner.appendChild(slide);
     }
 
-    this.toggleArrowsVisibility();
     this.move();
     this.productAddHandler();
   }
@@ -50,6 +49,8 @@ export default class Carousel {
   }
 
   move() {
+    this.toggleArrowsVisibility();
+
     this.elem.addEventListener('click', (event) => {  
       if (this.arrowLeft === event.target.closest('.carousel__arrow_left')) {
         this.currentPosition += this.inner.offsetWidth;
