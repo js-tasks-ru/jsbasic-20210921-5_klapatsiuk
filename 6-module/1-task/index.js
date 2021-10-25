@@ -40,11 +40,12 @@ export default class UserTable {
       tbody.appendChild(tr);
 
       tr.outerHTML = `<td>${tr.name}</td>
-      <td>${tr.age}</td>
-      <td>${tr.salary}</td>
-      <td>${tr.city}</td>
-      <td><button onclick="this.closest('tr').remove()">X</button></td>`;
+                      <td>${tr.age}</td>
+                      <td>${tr.salary}</td>
+                      <td>${tr.city}</td>
+                      <td><button onclick="this.closest('tr').remove()">X</button></td>`;
     }
+    
     this.elem = table;
   }
 }
