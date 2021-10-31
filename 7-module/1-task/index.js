@@ -55,7 +55,6 @@ export default class RibbonMenu {
   }
 
   toggleArrowsVisibility() {
-
     this.inner.scrollRight = this.inner.scrollWidth - this.inner.scrollLeft - this.inner.clientWidth;
 
     if (this.inner.scrollLeft === 0) {
