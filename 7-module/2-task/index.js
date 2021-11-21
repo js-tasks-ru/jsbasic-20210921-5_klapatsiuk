@@ -6,8 +6,7 @@ export default class Modal {
     this.closeButton = this.elem.querySelector('.modal__close');
     this.escKeyHandler = (event) => {
       if (event.key == 'Escape') this.close();
-    }
-    //.bind(this);
+    };
   }
   
   open() {
